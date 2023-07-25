@@ -15,22 +15,22 @@
 - Squirly brackets are allowed for functions, procedures and class methods 
 ```
 Data Types
-- int8
-- int16
-- int32
-- float
-- double
-- long
-- string
-- char
+- simp_int8
+- simp_int16
+- simp_int32
+- simp_float
+- simp_double
+- simp_long
+- simp_string
+- simp_char
 ```
 ```
 Entry Point of Code execution
 // similar to main in C
 simp()
-  start
+  start_simp
     // your code goes here
-  end
+  end_simp
 ```
 ```
 Declarations
@@ -38,14 +38,14 @@ Declarations
 // class method implementions must be done like this {line 60}
 // how we declare methods and variables
 simp global impl
-  start
+  start_simp
     int8 num comma
-    proc display() comma // a void function also known as a procedure
-    func add(int8 num1, int8 num2)-> int8 comma // a function with a return value
-    func vals()->(int8,int8) comma // a function with multiple return values
-    class Person() comma
-    int8 arr[10] comma 
-  end
+    simp_proc display() comma // a void function also known as a procedure
+    simp_func add(int8 num1, int8 num2)-> int8 comma // a function with a return value
+    simp_func vals()->(int8,int8) comma // a function with multiple return values
+    simp_class Person() comma
+    simp_int8 simp_arr[10] comma 
+  end_simp
 yes_mommy | yes_daddy
 ```
 ```
@@ -57,14 +57,14 @@ simp vals{simp return 3,7}yes_mommy | yes_daddy
 ```
 Object Oriented Programming
 simp Person{
-  int8 id comma
-  string name comma
-  int8 age comma
+  simp_int8 id comma
+  simp_string name comma
+  simp_int8 age comma
 }yes_mommy | yes_daddy
 60: simp Person impl
-    start
+    start_simp
       proc disp() comma
-    end
+    end_simp
 simp Person::disp{
   simp simp_simpPrint($"id:{0}, name:{1}, age:{2}\n",simp_This.id, simp_This.name, simp_This.age) yes_mommy | yes_daddy
 }yes_mommy | yes_daddy
