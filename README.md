@@ -10,7 +10,7 @@
 - Arrays have only one dimension
 - Functions can have multiple return types
 - Void functions are called procedures
-- You cannot import other .hello files into another .hello file
+- You cannot import other .simp files into another .simp file
 - Class methods cannot be written inside the class body, can only be written on the outside of the class body
 - Squirly brackets are allowed for functions, procedures and class methods 
 ```
