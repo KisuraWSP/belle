@@ -1,0 +1,5 @@
+struct std{
+	_
+	var 
+	logger
+}	
