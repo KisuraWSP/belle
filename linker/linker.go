@@ -1,5 +1,5 @@
 package linker
 
-func test2(){
-	//
+func test2() {
+	// for now blank
 }

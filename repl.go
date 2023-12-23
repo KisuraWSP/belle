@@ -1,11 +1,12 @@
 package main
 
-import(
+import (
 	"fmt"
-	"os"
 	"log"
-	"doc/doc_repl"
+	"os"
+	//"github.com/KisuraWSP/simp_/doc"
 )
+
 /*
 # -- help guideline
 Go is a tool for managing Go source code.
@@ -63,13 +64,13 @@ Use "go help <topic>" for more information about that topic.
 
 */
 
-func main(){
+func main() {
 	args := os.Args
-	for i:=1; i< len(args); i++ {
-		if args[1] == "version"{
+	for i := 1; i < len(args); i++ {
+		if args[1] == "version" {
 			fmt.Println("simp_ version 0")
 		}
-		if args[i] == "help"{
+		if args[i] == "help" {
 			fmt.Println("simp_ is a tool for managing simp_ source code.")
 			fmt.Println("Usage:")
 			fmt.Println("simp <command> [arguments]")
@@ -77,15 +78,12 @@ func main(){
 			fmt.Println("run\tcompile and run the program via the executable")
 			fmt.Println("version\tdisplays the version of the language")
 			fmt.Println("doc\tdisplays the REPL for the language documentation")
-		}
-		else if args[i] == "run"{
+		} else if args[i] == "run" {
 			// run the source code
-		}
-		else if args[i] == "doc"{
-			doc := doc{}
-			doc.doc_repl()
-		}
-		else{
+		} else if args[i] == "doc" {
+			d := &doc{}
+			d.repl_load()
+		} else {
 			log.Println("Not an valid  argument")
 		}
 	}

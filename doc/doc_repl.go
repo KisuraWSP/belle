@@ -1,37 +1,35 @@
 package doc
 
-import(
+import (
 	"fmt"
 	"log"
-	"ioutil"
+	"os"
 )
 
-type doc struct {}
+type doc struct{}
 
-func (d *doc) repl_load(){
+func (d *doc) repl_load() {
 	var input string
-	for input != "exit"{
-		if input == "exit"{
+	for input != "exit" {
+		if input == "exit" {
 			log.Println("Exiting DOC REPL")
-			break;
-		}
-		else if input "std"{
-			content, err := ioutil.ReadFile("std.txt")
+			break
+		} else if input == "std" {
+			content, err := os.ReadFile("std.txt")
 
-			if err != nil{
+			if err != nil {
 				log.Fatal(err)
 			}
 			str := string(content)
 			fmt.Println(str)
-		}
-		else{
+		} else {
 			fmt.Println("Invalid Argument Entered!")
 		}
 
 	}
 }
 
-func (d *doc) doc_handler(file string){
+func (d *doc) doc_handler(file string) {
 	// reads file and returns related documentation
 	// used for the case of multiple arguments
 }
