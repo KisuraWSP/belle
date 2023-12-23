@@ -1,9 +1,7 @@
-package main
+package repl
 
 import (
 	"fmt"
-	"log"
-	"os"
 )
 
 /*
@@ -63,28 +61,16 @@ Use "go help <topic>" for more information about that topic.
 
 */
 
-func main() {
-	args := os.Args
-	for i := 1; i < len(args); i++ {
-		if args[1] == "version" {
-			fmt.Println("simp_ version 0")
-		}
-		if args[i] == "help" {
-			fmt.Println("simp_ is a tool for managing simp_ source code.\n")
-			fmt.Println("Usage:\n")
-			fmt.Println("simp <command> [arguments]\n")
-			fmt.Println("The commands are:\n")
-			fmt.Println("run\t\tcompile and run the program via the executable")
-			fmt.Println("version\t\tdisplays the version of the language")
-			fmt.Println("doc\t\tdisplays the REPL for the language documentation")
-		} else if args[i] == "run" {
-			// run the source code
-		} else if args[i] == "doc" {
-			//d := &doc{}
-			//d.repl_load()
-			test3()
-		} else {
-			log.Println("Not an valid  argument")
-		}
-	}
+func version() {
+	fmt.Println("simp_ version 0")
+}
+
+func help() {
+	fmt.Printf("simp_ is a tool for managing simp_ source code.\n\n")
+	fmt.Printf("Usage:\n\n")
+	fmt.Printf("simp <command> [arguments]\n\n")
+	fmt.Printf("The commands are:\n\n")
+	fmt.Println("run\t\tcompile and run the program via the executable")
+	fmt.Println("version\t\tdisplays the version of the language")
+	fmt.Println("doc\t\tdisplays the REPL for the language documentation")
 }
