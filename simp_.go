@@ -1,7 +1,9 @@
-package repl
+package main
 
 import (
 	"fmt"
+	"log"
+	"os"
 )
 
 /*
@@ -61,16 +63,55 @@ Use "go help <topic>" for more information about that topic.
 
 */
 
-func version() {
-	fmt.Println("simp_ version 0")
+type doc struct{}
+
+func (d *doc) repl_load() {
+	var input string
+	for input != "exit" {
+		if input == "exit" {
+			log.Println("Exiting DOC REPL")
+			break
+		} else if input == "std" {
+			content, err := os.ReadFile("std.txt")
+
+			if err != nil {
+				log.Fatal(err)
+			}
+			str := string(content)
+			fmt.Println(str)
+		} else {
+			fmt.Println("Invalid Argument Entered!")
+		}
+
+	}
 }
 
-func help() {
-	fmt.Printf("simp_ is a tool for managing simp_ source code.\n\n")
-	fmt.Printf("Usage:\n\n")
-	fmt.Printf("simp <command> [arguments]\n\n")
-	fmt.Printf("The commands are:\n\n")
-	fmt.Println("run\t\tcompile and run the program via the executable")
-	fmt.Println("version\t\tdisplays the version of the language")
-	fmt.Println("doc\t\tdisplays the REPL for the language documentation")
+func (d *doc) doc_handler(file string) {
+	// reads file and returns related documentation
+	// used for the case of multiple arguments
+}
+
+func main() {
+	args := os.Args
+	for i := 1; i < len(args); i++ {
+		if args[1] == "version" {
+			fmt.Println("simp_ version 0")
+		}
+		if args[i] == "help" {
+			fmt.Printf("simp_ is a tool for managing simp_ source code.\n\n")
+			fmt.Printf("Usage:\n\n")
+			fmt.Printf("simp <command> [arguments]\n\n")
+			fmt.Printf("The commands are:\n\n")
+			fmt.Println("run\t\tcompile and run the program via the executable")
+			fmt.Println("version\t\tdisplays the version of the language")
+			fmt.Println("doc\t\tdisplays the REPL for the language documentation")
+		} else if args[i] == "run" {
+			// run the source code
+		} else if args[i] == "doc" {
+			d := &doc{}
+			d.repl_load()
+		} else {
+			log.Println("Not an valid  argument")
+		}
+	}
 }
