@@ -7,73 +7,120 @@ import (
 )
 
 /*
-# -- help guideline
-Go is a tool for managing Go source code.
+# help guideline
+("how we going to structure the `help` flag when called in the program")
+("based on go help")
 
-Usage:
+	Go is a tool for managing Go source code.
 
-        go <command> [arguments]
+	Usage:
 
-The commands are:
+        	go <command> [arguments]
 
-        bug         start a bug report
-        build       compile packages and dependencies
-        clean       remove object files and cached files
-        doc         show documentation for package or symbol
-        env         print Go environment information
-        fix         update packages to use new APIs
-        fmt         gofmt (reformat) package sources
-        generate    generate Go files by processing source
-        get         add dependencies to current module and install them
-        install     compile and install packages and dependencies
-        list        list packages or modules
-        mod         module maintenance
-        work        workspace maintenance
-        run         compile and run Go program
-        test        test packages
-        tool        run specified go tool
-        version     print Go version
-        vet         report likely mistakes in packages
+	The commands are:
 
-Use "go help <command>" for more information about a command.
+        	bug         start a bug report
+        	build       compile packages and dependencies
+       		clean       remove object files and cached files
+        	doc         show documentation for package or symbol
+		env         print Go environment information
+        	fix         update packages to use new APIs
+        	fmt         gofmt (reformat) package sources
+        	generate    generate Go files by processing source
+        	get         add dependencies to current module and install them
+        	install     compile and install packages and dependencies
+        	list        list packages or modules
+        	mod         module maintenance
+        	work        workspace maintenance
+        	run         compile and run Go program
+        	test        test packages
+        	tool        run specified go tool
+        	version     print Go version
+        	vet         report likely mistakes in packages
 
-Additional help topics:
+	Use "go help <command>" for more information about a command.
 
-        buildconstraint build constraints
-        buildmode       build modes
-        c               calling between Go and C
-        cache           build and test caching
-        environment     environment variables
-        filetype        file types
-        go.mod          the go.mod file
-        gopath          GOPATH environment variable
-        gopath-get      legacy GOPATH go get
-        goproxy         module proxy protocol
-        importpath      import path syntax
-        modules         modules, module versions, and more
-        module-get      module-aware go get
-        module-auth     module authentication using go.sum
-        packages        package lists and patterns
-        private         configuration for downloading non-public code
-        testflag        testing flags
-        testfunc        testing functions
-        vcs             controlling version control with GOVCS
+	Additional help topics:
 
-Use "go help <topic>" for more information about that topic.
+        	buildconstraint build constraints
+        	buildmode       build modes
+        	c               calling between Go and C
+        	cache           build and test caching
+       		environment     environment variables
+        	filetype        file types
+        	go.mod          the go.mod file
+        	gopath          GOPATH environment variable
+        	gopath-get      legacy GOPATH go get
+        	goproxy         module proxy protocol
+        	importpath      import path syntax
+        	modules         modules, module versions, and more
+        	module-get      module-aware go get
+        	module-auth     module authentication using go.sum
+        	packages        package lists and patterns
+        	private         configuration for downloading non-public code
+        	testflag        testing flags
+        	testfunc        testing functions
+        	vcs             controlling version control with GOVCS
+
+	Use "go help <topic>" for more information about that topic.
 
 */
 
-type doc struct{}
+// version 
+var VERSION_NO string = fmt.Sprintf("%v",0.1)
+var VERSION string = "simp_ version " + VERSION_NO
 
-func (d *doc) repl_load() {
-	var input string
+// help <- guides the users to use the program
+var HELP string =`
+simp_ is a tool for managing simp_ source code.
+        	
+Usage:
+        simp_ <command> [arguments]
+	
+	The commands are:
+        	run		compile and run the program via the executable 
+        	version		displays the version of the language 
+        	doc		displays the REPL for the language documentation
+		repl 		loads the READ-EVAL-PRINT-LOOP
+`
+
+// reserved keywords
+const(
+	simp int = iota
+	start_simp
+	end_simp
+	global
+	impl
+	comma
+	simp_proc
+	simp_func
+	simp_class
+
+	yes_mommy
+	yes_daddy
+
+	// types
+	simp_int8
+	simp_int16
+	simp_int32
+	simp_float
+	simp_double
+	simp_long
+	simp_string
+	simp_char
+)
+
+// documentation
+func docrepl_load() {
+	var input string 
+	fmt.Print("DOC=>")
+	fmt.Scan(&input)
 	for input != "exit" {
 		if input == "exit" {
 			log.Println("Exiting DOC REPL")
 			break
 		} else if input == "std" {
 			content, err := os.ReadFile("std.txt")
-
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -81,36 +128,80 @@ func (d *doc) repl_load() {
 			fmt.Println(str)
 		} else {
 			fmt.Println("Invalid Argument Entered!")
+			docrepl_load()
 		}
 
 	}
 }
 
-func (d *doc) doc_handler(file string) {
+func  doc_handler(file string) {
 	// reads file and returns related documentation
 	// used for the case of multiple arguments
 }
 
+// ast (abstract syntax tree)
+type node struct{
+	// used for the ast
+}
+type tree struct{
+	// defines the whole syntax tree
+	op string
+	left string // takes a left node <- data type(?struct) 
+	right string // takes a right node <- data type(?struct)
+}
+
+
+// lexical analysis (generate tokens for each keyword or expression evaluated)
+type token struct{
+        // used for the lexical analyzer
+}
+
+
+// syntax analysis (expression parser)
+
+
+// semantic analysis (syntax verification)
+
+
+// assembler (generate assembly for the language)
+
+
+// linker (link the assembly to create an executable file)
+
+
+// REPL (READ-EVALUATE-PRINT-LOOP)
+func repl_load(){
+	var input string
+	fmt.Print("RUN=>")
+	fmt.Scan(&input)
+	for input != "exit" {
+		if input == "exit"{
+			log.Print("Exiting Out of REPL")
+			break
+		}else if input == "version"{
+			fmt.Printf("%s\n",VERSION)
+			repl_load()
+		}
+	}
+
+	
+}
+
 func main() {
 	args := os.Args
-	for i := 1; i < len(args); i++ {
-		if args[1] == "version" {
-			fmt.Println("simp_ version 0")
-		}
+	for i := 1; i < len(args); i++ {				               
 		if args[i] == "help" {
-			fmt.Printf("simp_ is a tool for managing simp_ source code.\n\n")
-			fmt.Printf("Usage:\n\n")
-			fmt.Printf("simp <command> [arguments]\n\n")
-			fmt.Printf("The commands are:\n\n")
-			fmt.Println("run\t\tcompile and run the program via the executable")
-			fmt.Println("version\t\tdisplays the version of the language")
-			fmt.Println("doc\t\tdisplays the REPL for the language documentation")
-		} else if args[i] == "run" {
+			fmt.Printf("%s",HELP)
+		}else if args[i] == "run" {
 			// run the source code
-		} else if args[i] == "doc" {
-			d := &doc{}
-			d.repl_load()
-		} else {
+		}else if args[i] == "version" {
+			fmt.Printf("%s\n",VERSION)
+			break
+		}else if args[i] == "doc" {
+			docrepl_load()
+		}else if args[i] == "repl" {
+			repl_load()
+		}else {
 			log.Println("Not an valid  argument")
 		}
 	}
