@@ -1,3 +1,13 @@
+build:
+	@go build
+
 run:
-	@go run .
+	./simp_
+
+version:
+	./simp_ version
+
+help:
+	./simp_ help
+
 
