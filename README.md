@@ -64,7 +64,7 @@ go run . version
 make exec_name
 ```
 ## Links
-[CONTRIBUTING.md]()
-[SYNTAX.md]()
+[CONTRIBUTING.md](https://github.com/KisuraWSP/simp_/blob/main/CONTRIBUTING.md)<br>
+[SYNTAX.md](https://github.com/KisuraWSP/simp_/blob/main/SYNTAX.md)
 
 ---
