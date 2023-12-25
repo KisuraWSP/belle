@@ -141,15 +141,35 @@ func  doc_handler(file string) {
 
 // ast (abstract syntax tree)
 type node struct{
-	// used for the ast
-}
-type tree struct{
-	// defines the whole syntax tree
-	op string
-	left string // takes a left node <- data type(?struct) 
-	right string // takes a right node <- data type(?struct)
+	operation_type string
+	content string
 }
 
+type tree struct{
+	root *node 
+	left *node  
+	right *node 
+}
+
+func (t *tree) walk_left(){
+	// traverse the left side of the tree
+}
+
+func (t *tree) walk_right(){
+	// traverse the right side of the tree
+}
+
+func (t *tree) check_root(){
+	// check if the node is the root
+}
+
+func (t *tree) append_node(n *node){
+	// append node to the tree
+}
+
+func (t *tree) check_node_type(n *node){
+	// check the type of the node with the tree node
+}
 
 // lexical analysis (generate tokens for each keyword or expression evaluated)
 type token struct{

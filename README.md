@@ -67,4 +67,8 @@ make exec_name
 [CONTRIBUTING.md](https://github.com/KisuraWSP/simp_/blob/main/CONTRIBUTING.md)<br>
 [SYNTAX.md](https://github.com/KisuraWSP/simp_/blob/main/SYNTAX.md)
 
+# References
+[AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
+
+
 ---
