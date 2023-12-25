@@ -84,7 +84,7 @@ Usage:
 		repl 		loads the READ-EVAL-PRINT-LOOP
 `
 
-// reserved keywords
+// reserved keywords and symbols
 const(
 	simp int = iota
 	start_simp
@@ -108,6 +108,28 @@ const(
 	simp_long
 	simp_string
 	simp_char
+
+	// Symbols
+	PLUS // +
+	MINUS // -
+	SLASH_L // /
+	SLASH_R // \
+	STAR // *
+	SINGLEQUOTE // '
+	DOUBLEQUOTE // "
+	SQUIRLY_L // {
+	SQUIRLY_R // }
+	BRACKET_L // (
+	BRACKET_R // )
+	EQUAL // =
+	NOT // !
+	AND // &
+	OR // |
+	SQUARE_BRACKET_L // [
+	SQUARE_BRACKET_R // ]
+	COLON // :
+	COMMA // ,
+	DOT // .
 )
 
 // documentation
@@ -173,20 +195,25 @@ func (t *tree) check_node_type(n *node){
 
 // lexical analysis (generate tokens for each keyword or expression evaluated)
 type token struct{
-        // used for the lexical analyzer
+	order int // used for the expression generation to determine sequence order
+	content *tree // not sure need to do more research
+	type_ int // used to identify whether if it is a reserved keyword or not
 }
 
+func (t *token) check_if_reserved(){
+	// if the keyword is reserved then do some operation with it
+	// if not its a value by default to that operations type 
+}
+
+
+func generate_expression(tokenlist []*token){
+	//generate a valid expression and make sure it works with the programming languages logic 	
+}
 
 // syntax analysis (expression parser)
 
 
 // semantic analysis (syntax verification)
-
-
-// assembler (generate assembly for the language)
-
-
-// linker (link the assembly to create an executable file)
 
 
 // REPL (READ-EVALUATE-PRINT-LOOP)
