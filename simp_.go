@@ -68,52 +68,58 @@ import (
 
 // version 
 var VERSION_NO string = fmt.Sprintf("%v",0.1)
-var VERSION string = "simp_ version " + VERSION_NO
+var VERSION string = "Belle Version " + VERSION_NO
 
 // help <- guides the users to use the program
 var HELP string =`
-simp_ is a tool for managing simp_ source code.
+Belle is a tool for managing belle source code.
         	
 Usage:
-        simp_ <command> [arguments]
+        belle <command> [arguments]
 	
 	The commands are:
-        	run		compile and run the program via the executable 
+     	  	run		compile and run the program via the executable 
         	version		displays the version of the language 
         	doc		displays the REPL for the language documentation
 		repl 		loads the READ-EVAL-PRINT-LOOP
 `
 
 // reserved keywords and symbols
-const(
-	simp int = iota
-	start_simp
-	end_simp
-	global
-	impl
+const (
+	belle int = iota 
+	start
+	end 
+	global_declare
+	impl_block
 	comma
-	simp_proc
-	simp_func
-	simp_class
-
-	yes_mommy
-	yes_daddy
-
+	belle_proc
+	belle_func
+	belle_class
+	belle_struct
+		
 	// types
-	simp_int8
-	simp_int16
-	simp_int32
-	simp_float
-	simp_double
-	simp_long
-	simp_string
-	simp_char
+	bInt4 // signed 4-bit integer
+	bInt8 // signed 8-bit integer
+	bInt16 // signed 16-bit integer
+	bInt32 // signed 32-bit integer
+	bUint4 // unsigned 4-bit integer
+	bUint8 // unsigned 8-bit integer
+	bUint16 // unsigned 16-bit integer
+	bUin32 // unsigned 32-bit integer
+	bFloat // signed float
+	bUfloat // unsigned float 
+	bDouble // signed double
+	bUdouble // unsigned double 
+	bLong // signed long (64-bit)
+	bUong // unsigned long (64-bit)
+	bString // string
+	bChar // char
 
 	// Symbols
 	PLUS // +
 	MINUS // -
 	SLASH_L // /
-	SLASH_R // \
+	SLASH_R// \
 	STAR // *
 	SINGLEQUOTE // '
 	DOUBLEQUOTE // "
@@ -132,8 +138,69 @@ const(
 	DOT // .
 )
 
+// print enums
+var reserved = []int{
+	belle,
+	start,
+	end,
+	global_declare,
+	impl_block,
+	comma,
+	belle_proc,
+	belle_func,
+	belle_class,
+	belle_struct,
+			
+	// types
+	bInt4, 
+	bInt8, 
+	bInt16, 
+	bInt32, 
+	bUint4, 
+	bUint8, 
+	bUint16, 
+	bUin32, 
+	bFloat, 
+	bUfloat, 
+	bDouble, 
+	bUdouble, 
+	bLong, 
+	bUong, 
+	bString,
+	bChar, 
+
+	// Symbols
+	PLUS, 
+	MINUS, 
+	SLASH_L, 
+	SLASH_R,
+	STAR, 
+	SINGLEQUOTE,
+	DOUBLEQUOTE, 
+	SQUIRLY_L, 
+	SQUIRLY_R, 
+	BRACKET_L, 
+	BRACKET_R, 
+	EQUAL, 
+	NOT, 
+	AND, 
+	OR, 
+	SQUARE_BRACKET_L, 
+	SQUARE_BRACKET_R, 
+	COLON, 
+	COMMA, 
+	DOT,
+}
+func print_enum_values(){
+	var length int = len(reserved)
+	fmt.Println("VALUES")
+	for i:=0; i<length; i++ {
+		fmt.Println(i)
+	}
+}
+
 // documentation
-func docrepl_load() {
+func docrepl_load() int {
 	var input string 
 	fmt.Print("DOC=>")
 	fmt.Scan(&input)
@@ -148,12 +215,14 @@ func docrepl_load() {
 			}
 			str := string(content)
 			fmt.Println(str)
+			break
 		} else {
 			fmt.Println("Invalid Argument Entered!")
 			docrepl_load()
 		}
 
 	}
+	return 1
 }
 
 func  doc_handler(file string) {
@@ -217,7 +286,7 @@ func generate_expression(tokenlist []*token){
 
 
 // REPL (READ-EVALUATE-PRINT-LOOP)
-func repl_load(){
+func repl_load() int {
 	var input string
 	fmt.Print("RUN=>")
 	fmt.Scan(&input)
@@ -230,26 +299,29 @@ func repl_load(){
 			repl_load()
 		}
 	}
-
-	
+	return 1
 }
 
 func main() {
+	var run_flag int
 	args := os.Args
-	for i := 1; i < len(args); i++ {				               
-		if args[i] == "help" {
-			fmt.Printf("%s",HELP)
-		}else if args[i] == "run" {
+	for i := 1; i < len(args); i++{
+		if args[i] == "run" {
 			// run the source code
 		}else if args[i] == "version" {
 			fmt.Printf("%s\n",VERSION)
 			break
 		}else if args[i] == "doc" {
-			docrepl_load()
+			ret := docrepl_load()
+			run_flag = ret
 		}else if args[i] == "repl" {
-			repl_load()
+			ret := repl_load()
+			run_flag = ret
 		}else {
 			log.Println("Not an valid  argument")
 		}
+	}
+	if run_flag != 1 {
+		fmt.Printf("%s",HELP)
 	}
 }

@@ -12,3 +12,11 @@ help:
 
 exec_name:
 	echo "executable file_name: ./simp_"
+
+prog:
+	@go run .
+
+prog_ver:
+	@go run . version
+
+
