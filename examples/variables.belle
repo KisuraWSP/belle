@@ -1,0 +1,19 @@
+global_declare:
+	(* Staticly Typed Variables *)
+	bVar value0 bInt4 = 0
+	bVar value1 bFloat = 12.3
+	bVar value2 bDouble = 2.2323
+	bVar value3 bString = "john cena"
+	bVar value4 bChar = 'X'
+	bVar value5 bLong = 696969969696
+	
+
+belle()
+start
+	bPrint value0 "\n"
+	bPrint value1 "\n"
+	bPrint value2 "\n"
+	bPrint value3 "\n"
+	bPrint value4 "\n"
+	bPrint value5 "\n'
+end

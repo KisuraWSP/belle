@@ -82,6 +82,9 @@ Usage:
         	version		displays the version of the language 
         	doc		displays the REPL for the language documentation
 		repl 		loads the READ-EVAL-PRINT-LOOP
+		fread 		reads the .belle file if given as an argument
+		values 		displays the values for the enums in the language
+		
 `
 
 // reserved keywords and symbols
@@ -90,13 +93,16 @@ const (
 	start
 	end 
 	global_declare
-	impl_block
-	comma
+	impl
 	belle_proc
 	belle_func
-	belle_class
-	belle_struct
-		
+	bPrint
+	bPrintln
+	bFprint
+	bFprintln
+	bEprint
+	bEprintln
+			
 	// types
 	bInt4 // signed 4-bit integer
 	bInt8 // signed 8-bit integer
@@ -114,17 +120,18 @@ const (
 	bUong // unsigned long (64-bit)
 	bString // string
 	bChar // char
+	bAny // Any type
+	bError // Error type
+	
 
 	// Symbols
 	PLUS // +
 	MINUS // -
 	SLASH_L // /
-	SLASH_R// \
+	SLASH_R // \ //
 	STAR // *
 	SINGLEQUOTE // '
 	DOUBLEQUOTE // "
-	SQUIRLY_L // {
-	SQUIRLY_R // }
 	BRACKET_L // (
 	BRACKET_R // )
 	EQUAL // =
@@ -140,17 +147,23 @@ const (
 
 // print enums
 var reserved = []int{
+	// basic keywords
 	belle,
 	start,
 	end,
 	global_declare,
-	impl_block,
-	comma,
+	impl,
 	belle_proc,
 	belle_func,
-	belle_class,
-	belle_struct,
-			
+	bPrint,
+	bPrintln,
+	bFprint,
+	bFprintln,
+	bEprint,
+	bEprintln,
+}
+
+var primitives = []int{
 	// types
 	bInt4, 
 	bInt8, 
@@ -168,7 +181,11 @@ var reserved = []int{
 	bUong, 
 	bString,
 	bChar, 
+	bAny,
+	bError,
+}
 
+var symbols = []int{
 	// Symbols
 	PLUS, 
 	MINUS, 
@@ -177,8 +194,6 @@ var reserved = []int{
 	STAR, 
 	SINGLEQUOTE,
 	DOUBLEQUOTE, 
-	SQUIRLY_L, 
-	SQUIRLY_R, 
 	BRACKET_L, 
 	BRACKET_R, 
 	EQUAL, 
@@ -191,9 +206,26 @@ var reserved = []int{
 	COMMA, 
 	DOT,
 }
-func print_enum_values(){
+
+func print_reserved_values(){
 	var length int = len(reserved)
-	fmt.Println("VALUES")
+	fmt.Println("VALUES {RESERVED}")
+	for i:=0; i<length; i++ {
+		fmt.Println(i)
+	}
+}
+
+func print_symbol_values(){
+	var length int = len(symbols)
+	fmt.Println("VALUES {SYMBOLS}")
+	for i:=0; i<length; i++ {
+		fmt.Println(i)
+	}
+}
+
+func print_primitive_values(){
+	var length int = len(primitives)
+	fmt.Println("VALUES {PRIMITIVES}")
 	for i:=0; i<length; i++ {
 		fmt.Println(i)
 	}
@@ -314,9 +346,19 @@ func main() {
 		}else if args[i] == "doc" {
 			ret := docrepl_load()
 			run_flag = ret
+			break
 		}else if args[i] == "repl" {
 			ret := repl_load()
 			run_flag = ret
+			break
+		}else if args[i] == "fread" {
+			// read the .belle file
+			break
+		}else if args[i] == "values" {
+			print_reserved_values()
+			print_primitive_values()
+			print_symbol_values()
+			break
 		}else {
 			log.Println("Not an valid  argument")
 		}

@@ -1,0 +1,17 @@
+global_declare:
+	bVar x bUint16 = 69420
+
+belle()
+start
+(*
+I want you to do condition handling similar to golang error handling
+eg:- if err != nil{
+	// do something
+     }
+like that shown above but its going to be a little different
+*)
+	if x != bError then
+		bPrint x
+	else 
+		bPrint bError.trace
+end

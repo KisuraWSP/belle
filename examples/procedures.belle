@@ -1,0 +1,22 @@
+global_declare:
+	belle_proc test()
+	belle_proc test2(t bInt4)
+
+impl:
+	test() 
+	start
+		bPrint "hallo"
+		bPrint ", World\n"
+	end
+
+	test2(t bInt4)
+	start
+
+		bPrint t
+	end
+
+belle()
+start
+	test()
+	test2(1)
+end

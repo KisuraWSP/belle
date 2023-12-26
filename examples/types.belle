@@ -1,0 +1,31 @@
+(*
+# Signed Integers
+- bInt4 
+- bInt8
+- bInt16
+- bInt32
+- bLong
+
+# Un-Signed Integers
+- bUint4
+- bUint8
+- bUint16
+- bUint32
+- bUlong
+
+# Floating Point Values
+- bFloat
+- bDouble
+
+# String
+- bString
+
+# Character
+- bChar
+
+# Any Type
+- bAny // Can be a String, Integer, Float or Error
+
+# Error Type
+- bError
+*)
