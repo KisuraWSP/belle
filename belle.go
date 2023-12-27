@@ -240,8 +240,8 @@ func docrepl_load() int {
 		if input == "exit" {
 			log.Println("Exiting DOC REPL")
 			break
-		} else if input == "std" {
-			content, err := os.ReadFile("std.txt")
+		} else if input == "test" {
+			content, err := os.ReadFile("test.txt")
 			if err != nil {
 				log.Fatal(err)
 			}

@@ -2,21 +2,14 @@ build:
 	@go build
 
 run:
-	./simp_
+	./belle
 
 version:
-	./simp_ version
+	./belle version
 
 help:
-	./simp_ help
+	./belle help
 
 exec_name:
-	echo "executable file_name: ./simp_"
-
-prog:
-	@go run .
-
-prog_ver:
-	@go run . version
-
+	echo "executable file_name: ./belle"
 
