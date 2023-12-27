@@ -1,4 +1,4 @@
-# simp_ 
+# Belle
 - An esoteric programming language
 
 ---
@@ -29,7 +29,7 @@ make run
 go run .
 
 # Using the executable
-./simp_
+./belle
 ```
 
 ### Display List of Commands
@@ -41,7 +41,7 @@ make help
 go run . help
 
 # Using the executable
-./simp_ help
+./belle help
 ```
 
 ### Display Version of the Langauge
@@ -53,7 +53,7 @@ make version
 go run . version
 
 # Using the executable 
-./simp_ version
+./belle version
 ```
 
 ### Display the Executable Name
