@@ -68,7 +68,9 @@ make exec_name
 [SYNTAX.md](https://github.com/KisuraWSP/simp_/blob/main/SYNTAX.md)
 
 # References
-[AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
-
-
+[AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree)<br>
+[uc](https://github.com/mewmew/uc)<br>
+[llvm ir for go ](https://github.com/llir/llvm)<br>
+[gogo](https://github.com/shivansh/gogo)<br>
+[gocc](https://github.com/goccmack/gocc)<br>
 ---
