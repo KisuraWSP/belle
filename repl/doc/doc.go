@@ -10,12 +10,13 @@ import(
 func Load() {
 	var state int
 	var input string 
-	fmt.Print("DOC=>")
 	state = 1
-	fmt.Scan(&input)
-	for input != "exit" {
+	for {
+		fmt.Print("DOC=>")
+		fmt.Scan(&input)
 		if input == "exit" {
 			log.Println("Exiting DOC REPL")
+			break
 		} else if input == "test" {
 			content, err := os.ReadFile("examples/test.txt")
 			if err != nil {
@@ -23,14 +24,13 @@ func Load() {
 			}
 			str := string(content)
 			fmt.Println(str)
-			break
 		} else {
 			fmt.Println("Invalid Argument Entered!")
 			state = 0
 			break
 		}
 	}
-	if state != 1 {
+	if state != 1 && input != "exit"{
 		fmt.Print("Do You want to enter again (Y/n): ")
 		fmt.Scan(&input)
 		if input == "y" || input == "Y"{
