@@ -1,4 +1,4 @@
-package doc
+package document
 
 import(
 	"fmt"
@@ -13,7 +13,7 @@ func Load() {
 	state = 1
 	for {
 		fmt.Print("DOC=>")
-		fmt.Scan(&input)
+		fmt.Scanln(&input)
 		if input == "exit" {
 			log.Println("Exiting DOC REPL")
 			break

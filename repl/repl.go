@@ -38,15 +38,13 @@ func (s *stack) Peek() {
 	}
 }
 
-
-
 // REPL (READ-EVALUATE-PRINT-LOOP)
 func Load() {
 	var input string
 	s := &stack{}
 	for {
 		fmt.Print("RUN=> ")
-		fmt.Scan(&input)
+		fmt.Scanln(&input)
 		if input == "exit" {
 			log.Println("Exiting REPL")
 			break

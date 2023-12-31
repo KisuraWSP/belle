@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 	"github.com/KisuraWSP/belle/repl"
-	"github.com/KisuraWSP/belle/repl/doc"
+	"github.com/KisuraWSP/belle/repl/document"
 	"github.com/KisuraWSP/belle/ast"
 )
 
@@ -39,7 +39,7 @@ func main() {
 			case "version":
 				fmt.Printf("%s\n",VERSION)
 			case "doc":
-				doc.Load()
+				document.Load()
 			case "repl":
 				repl.Load()
 			case "values":
