@@ -64,8 +64,8 @@ go run . version
 make exec_name
 ```
 ## Links
-[CONTRIBUTING.md](https://github.com/KisuraWSP/belle/blob/main/CONTRIBUTING.md)<br>
-[SYNTAX.md](https://github.com/KisuraWSP/belle/blob/main/docs/SYNTAX.md)
-[FEATURES](https://github.com/KisuraWSP/belle/blob/main/docs/FEATURES.md)
-[REFERENCES](https://github.com/KisuraWSP/belle/blob/main/docs/REFERENCES.md)
+[CONTRIBUTING](https://github.com/KisuraWSP/belle/blob/main/CONTRIBUTING.md)<br>
+[SYNTAX](https://github.com/KisuraWSP/belle/blob/main/docs/SYNTAX.md)<br>
+[FEATURES](https://github.com/KisuraWSP/belle/blob/main/docs/FEATURES.md)<br>
+[REFERENCES](https://github.com/KisuraWSP/belle/blob/main/docs/REFERENCES.md)<br>
 ---
