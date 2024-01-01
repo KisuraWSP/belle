@@ -28,11 +28,11 @@ make run
 # Using the GO compiler
 go run .
 
-# Using the executable
+# Using the executable (Build the program first inorder to do this)
 ./belle
 ```
 
-### Display List of Commands
+### Display List of Flags
 ```
 # Using via GNU make
 make help
@@ -56,7 +56,7 @@ go run . version
 ./belle version
 ```
 
-### Display the Executable Name
+### Display the Executable Name (Not Necessary but is given incase you want to know the name of the executable name)
 ```
 # (GNU make only)
 # For Users who want to know the programs executable file name 
