@@ -10,15 +10,15 @@ global_declare:
 ```
 global_declare:
     belle_func test() bAny
-    belle_func test(b bInt4) bInt4
+    belle_func test(b bInteger) bInteger
 
 impl:
-    test()
+    test() bAny
     start
         bReturn "hallo"
     end
 
-    test(b bInt4)
+    test(b bInteger) bInteger
     start
         bReturn b
     end
@@ -29,7 +29,8 @@ impl:
 ### Procedures
 ```
 global_declare:
-
+    belle_proc test()
+    belle_proc test(b bInteger)
 
 impl:
     test()
@@ -37,7 +38,7 @@ impl:
         bPrint "hallo"
     end
 
-    test(b bInt4)
+    test(b bInteger)
     start
         bPrint b
     end
