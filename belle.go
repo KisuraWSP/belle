@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"github.com/KisuraWSP/belle/repl"
-	"github.com/KisuraWSP/belle/repl/document"
-	"github.com/KisuraWSP/belle/ast"
+	"github.com/KisuraWSP/belle/src/repl"
+	"github.com/KisuraWSP/belle/src/repl/document"
+	"github.com/KisuraWSP/belle/src/ast"
 )
 
 // version 

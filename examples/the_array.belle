@@ -9,4 +9,5 @@ start
 	the_array.append = 's'
 	bPrint the_array.content.asList
 	bPrint the_array.length
+	bPrint the_array.get_curr_length
 end

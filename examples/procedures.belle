@@ -1,6 +1,6 @@
 global_declare:
 	belle_proc test()
-	belle_proc test2(t bInt4)
+	belle_proc test2(t bInteger)
 
 impl:
 	test() 
@@ -9,7 +9,7 @@ impl:
 		bPrint ", World\n"
 	end
 
-	test2(t bInt4)
+	test2(t bInteger)
 	start
 
 		bPrint t

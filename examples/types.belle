@@ -1,21 +1,12 @@
 (*
 # Signed Integers
-- bInt4 
-- bInt8
-- bInt16
-- bInt32
-- bLong
+- bInteger
 
 # Un-Signed Integers
-- bUint4
-- bUint8
-- bUint16
-- bUint32
-- bUlong
+- bUinteger
 
 # Floating Point Values
-- bFloat
-- bDouble
+- bDecimalPoint
 
 # String
 - bString
