@@ -3,7 +3,10 @@
 
 ---
 - Build System : GNU Make
-
+---
+## Important
+- Read the CHANGELOG.txt file for how the progress of the Language is occurring
+  
 ## Requirements to run the program
 - Must have the latest version of the GO compiler installed in your machine
 - For windows users to use the build system they must use WSL to use GNU make
