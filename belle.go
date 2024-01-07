@@ -7,7 +7,6 @@ import (
 	"github.com/KisuraWSP/belle/src/repl"
 	"github.com/KisuraWSP/belle/src/repl/document"
 	"github.com/KisuraWSP/belle/src/ast"
-//	"github.com/leaanthony/go-ansi-parser"
 )
 
 // version 
@@ -32,8 +31,6 @@ Usage:
 `
 
 func main() {
-//	name, err := ansi.Parse("\e[0;35mBelle - An Esoteric Programming Language\e[0m")
-
 	args := os.Args
 	for i := 1; i < len(args); i++{
 		switch args[i]{

@@ -2,11 +2,14 @@
 # Signed Integers
 - bInteger
 
-# Un-Signed Integers
+# Unsigned Integers
 - bUinteger
 
-# Floating Point Values
+# Signed Floating Point Values
 - bDecimalPoint
+
+# Unsigned Floating Point Values
+- bUdecimalPoint
 
 # String
 - bString

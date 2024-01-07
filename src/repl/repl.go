@@ -12,30 +12,24 @@ type method interface{
 }
 
 type stack struct{
-	content []string
+	region []string
 	top int	
 }
 
 func (s *stack) Pop() {
-	if s.top > 0 {
-		s.top--
-		s.content = s.content[:s.top]
-	} else {
-		fmt.Println("Stack is empty, cannot pop.")
-	}
+	// Pop the stack	
+	fmt.Print("TO BE IMPLEMENTED\n")
 }
 
 func (s *stack) Push(value string) {
-	s.content = append(s.content[:s.top], value)
-	s.top++
+	// Push the stack
+	fmt.Print("TO BE IMPLEMENTED->")
+	fmt.Printf("%s\n",value)
 }
 
 func (s *stack) Peek() {
-	if s.top > 0 {
-		fmt.Println("Top element:", s.content[s.top-1])
-	} else {
-		fmt.Println("Stack is empty, cannot peek.")
-	}
+	// Peek the stack
+	fmt.Print("TO BE IMPLEMENTED\n")
 }
 
 // REPL (READ-EVALUATE-PRINT-LOOP)

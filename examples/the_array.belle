@@ -3,10 +3,10 @@ global_declare:
 
 belle()
 start
-	the_array.append = "thekla"
-	the_array.append = 23
-	the_array.append = 3.14
-	the_array.append = 's'
+	the_array.append->"thekla"
+	the_array.append->23
+	the_array.append->3.14
+	the_array.append->'s'
 	bPrint the_array.content.asList
 	bPrint the_array.length
 	bPrint the_array.get_curr_length

@@ -1,5 +1,5 @@
 global_declare:
-	bVar x bUinteger = 69420
+	bVar x : bUinteger->69420
 
 belle()
 start

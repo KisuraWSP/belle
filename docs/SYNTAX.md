@@ -3,14 +3,14 @@
 ### Variables
 ```
 global_declare:
-    bVar name bString = "john cena"
+    bVar name : bString->"john cena"
 ```
 
 ### Functions
 ```
 global_declare:
-    belle_func test() bAny
-    belle_func test(b bInteger) bInteger
+    belle_func test() : bAny
+    belle_func test(b bInteger) :  bInteger
 
 impl:
     test() bAny
@@ -18,7 +18,7 @@ impl:
         bReturn "hallo"
     end
 
-    test(b bInteger) bInteger
+    test(b bInteger) : bInteger
     start
         bReturn b
     end

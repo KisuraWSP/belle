@@ -1,7 +1,7 @@
 global_declare:
-	belle_func test() bInteger
-	belle_func test2(t bInteger) bInteger
-	bVar name bAny
+	belle_func test() : bInteger
+	belle_func test2(t bInteger) : bInteger
+	bVar name : bAny
 impl:
 	test() bInteger
 	start
@@ -10,7 +10,7 @@ impl:
 		bReturn name
 	end
 
-	test2(t bInteger) bInteger
+	test2(t bInteger) : bInteger
 	start
 		bPrint "value: "
 		bReturn t

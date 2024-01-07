@@ -10,6 +10,7 @@ const (
 	start
 	end 
 	global_declare
+	declare
 	impl
 	belle_proc
 	belle_func
@@ -21,20 +22,10 @@ const (
 	bEprintln
 			
 	// types
-	bInt4 // signed 4-bit integer
-	bInt8 // signed 8-bit integer
-	bInt16 // signed 16-bit integer
-	bInt32 // signed 32-bit integer
-	bUint4 // unsigned 4-bit integer
-	bUint8 // unsigned 8-bit integer
-	bUint16 // unsigned 16-bit integer
-	bUin32 // unsigned 32-bit integer
-	bFloat // signed float
-	bUfloat // unsigned float 
-	bDouble // signed double
-	bUdouble // unsigned double 
-	bLong // signed long (64-bit)
-	bUong // unsigned long (64-bit)
+	bInteger // signed integer (64 bit)
+	bUinteger // unsigned integer (64bit)
+	bDecimalPoint // signed float
+	bUdecimalPoint // unsigned float
 	bString // string
 	bChar // char
 	bAny // Any type
@@ -60,6 +51,8 @@ const (
 	COLON // :
 	COMMA // ,
 	DOT // .
+	TRIANGLE_BRACKET_L // <
+	TRIANGLE_BRACKET_R  // >
 )
 
 // print enums
@@ -69,6 +62,7 @@ var reserved = []int{
 	start,
 	end,
 	global_declare,
+	declare,
 	impl,
 	belle_proc,
 	belle_func,
@@ -82,20 +76,10 @@ var reserved = []int{
 
 var primitives = []int{
 	// types
-	bInt4, 
-	bInt8, 
-	bInt16, 
-	bInt32, 
-	bUint4, 
-	bUint8, 
-	bUint16, 
-	bUin32, 
-	bFloat, 
-	bUfloat, 
-	bDouble, 
-	bUdouble, 
-	bLong, 
-	bUong, 
+	bInteger,  
+	bUinteger,
+	bDecimalPoint, 
+	bUdecimalPoint, 
 	bString,
 	bChar, 
 	bAny,
@@ -122,6 +106,8 @@ var symbols = []int{
 	COLON, 
 	COMMA, 
 	DOT,
+	TRIANGLE_BRACKET_L,
+	TRIANGLE_BRACKET_R,
 }
 
 func Print_reserved_values(){

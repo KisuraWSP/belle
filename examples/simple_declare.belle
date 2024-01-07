@@ -1,0 +1,11 @@
+global_declare:
+	bProc test()
+
+impl:
+	bProc test()
+	start
+		declare bVar t->3
+		bPrint t
+	end 
+
+

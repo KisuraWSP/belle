@@ -1,11 +1,11 @@
 global_declare:
 	(* Staticly Typed Variables *)
-	bVar value0 bInteger = 0
-	bVar value1 bDecimalPoint = 12.3
-	bVar value2 bDecimalPoint = 2.2323
-	bVar value3 bString = "john cena"
-	bVar value4 bChar = 'X'
-	bVar value5 bInteger = 696969969696
+	bVar value0 bInteger->0
+	bVar value1 bDecimalPoint->12.3
+	bVar value2 bDecimalPoint->2.2323
+	bVar value3 bString->"john cena"
+	bVar value4 bChar->'X'
+	bVar value5 bInteger->69420
 	
 
 belle()
