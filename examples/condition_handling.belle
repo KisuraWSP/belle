@@ -1,17 +1,18 @@
-global_declare:
-	bVar x : bUinteger->69420
+declare bProc belle();
+declare bVar x : bUinteger->69420;
 
-belle()
-start
-(*
-I want you to do condition handling similar to golang error handling
-eg:- if err != nil{
-	// do something
-     }
-like that shown above but its going to be a little different
-*)
-	if x != bError then
-		bPrint x
-	else 
-		bPrint bError.trace
-end
+implement{
+	(* conditions always throw errors in this language if not handled then it will error *)
+	declare bError{
+		check(x>100);
+	};
+	if x != bError then{
+		bPrint(x);
+	}else{
+		bPrint(bError.trace);
+	};
+		
+}for belle();
+
+(* for function calls *)
+call belle(); 

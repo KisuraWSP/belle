@@ -1,22 +1,18 @@
-global_declare:
-	belle_proc test()
-	belle_proc test2(t bInteger)
+declare	bProc test();
+declare	bProc test2(t bInteger);
 
-impl:
-	test() 
-	start
-		bPrint "hallo"
-		bPrint ", World\n"
-	end
+implement{ 
+	start;
+		bPrint("hallo");
+		bPrint(", World\n");
+	end;
+for test();
 
-	test2(t bInteger)
-	start
+implement{
+	start;
+		bPrint(t);
+	end;
+for test2(t bInteger);
 
-		bPrint t
-	end
-
-belle()
-start
-	test()
-	test2(1)
-end
+call test();
+call test2(1);

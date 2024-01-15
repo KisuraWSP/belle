@@ -1,24 +1,21 @@
-global_declare:
-	belle_func test() : bInteger
-	belle_func test2(t bInteger) : bInteger
-	bVar name : bAny
-impl:
-	test() bInteger
-	start
-		bPrint "value: "
-		bScan name
-		bReturn name
-	end
+declare bFunc test() : bInteger;
+declare	bFunc test2(t bInteger) : bInteger;
+declare	bVar name : bAny;
 
-	test2(t bInteger) : bInteger
-	start
-		bPrint "value: "
-		bReturn t
-	end
+implement{
+	start;
+		bPrint("value: ");
+		bScan(name);
+		bReturn(name);
+	end;
+for test() : bInteger;
 
-belle()
-start
-	test()
-	test2(2)
-end
+impment{
+	start;
+		bPrint("value: ");
+		bReturn(t);
+	end;
+for test2(t bInteger) : bInteger;
 
+call test();
+call test2(2);

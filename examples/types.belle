@@ -1,24 +1,21 @@
 (*
-# Signed Integers
-- bInteger
+# Integers
+- bInt
 
-# Unsigned Integers
-- bUinteger
-
-# Signed Floating Point Values
-- bDecimalPoint
-
-# Unsigned Floating Point Values
-- bUdecimalPoint
+# Floating Point
+- bDecPt
 
 # String
-- bString
+- bStr
+
+# Boolean
+- bBool
 
 # Character
-- bChar
+- bChr
 
 # Any Type
-- bAny // Can be a String, Integer, Float or Error
+- bAny // Can be a String, Integer, Float, Boolean or Error 
 
 # Error Type
 - bError

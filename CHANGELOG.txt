@@ -6,3 +6,7 @@
 - Currently havent implemented the main language syntax via the lexer, parser, etc...
 - Only Program flags have been implemented (by flags i mean command-line arguments)
 
+# v0.1.4
+## 1/15/2024 
+- Redoing the compiler structure to make it easier to do the implementation
+- Implemented the Enum test for the lexer 

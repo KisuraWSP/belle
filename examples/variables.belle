@@ -1,19 +1,14 @@
-global_declare:
-	(* Staticly Typed Variables *)
-	bVar value0 bInteger->0
-	bVar value1 bDecimalPoint->12.3
-	bVar value2 bDecimalPoint->2.2323
-	bVar value3 bString->"john cena"
-	bVar value4 bChar->'X'
-	bVar value5 bInteger->69420
-	
+(* Staticly Typed Variables *)
+declare	bVar value0 : bInt->0;
+declare	bVar value1 : bDecPt->12.3;
+declare	bVar value2 : bDecPt->2.2323;
+declare	bVar value3 : bStr->"john cena";
+declare	bVar value4 : bChr->'X';
+declare	bVar value5 : bInt->69420;
 
-belle()
-start
-	bPrint value0 "\n"
-	bPrint value1 "\n"
-	bPrint value2 "\n"
-	bPrint value3 "\n"
-	bPrint value4 "\n"
-	bPrint value5 "\n'
-end
+call bPrint(value0 + "\n");
+call bPrint(value1 + "\n");
+call bPrint(value2 + "\n");
+call bPrint(value3 + "\n");
+call bPrint(value4 + "\n");
+call bPrint(value5 + "\n');

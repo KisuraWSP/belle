@@ -1,11 +1,17 @@
 package document
 
+/*
+	IMPORTS
+*/
 import(
 	"fmt"
 	"log"
 	"os"
 )
 
+/*
+	HELPER FUNCTIONS	
+*/
 func GetDoc_txt(file string){
 	content, err := os.ReadFile("examples/"+file+".txt")
 	if err != nil {
@@ -14,7 +20,6 @@ func GetDoc_txt(file string){
 	str := string(content)
 	fmt.Println(str)
 }	
-
 
 func GetDoc_belle(file string){
 	content, err := os.ReadFile("examples/"+file+".belle")
@@ -25,7 +30,10 @@ func GetDoc_belle(file string){
 	fmt.Println(str)
 }	
 
-// Documentation & File Loading REPL
+
+/*
+	Documentation & File Loading REPL
+*/
 func Load() {
 	var input string 
 	for {
@@ -34,10 +42,6 @@ func Load() {
 		if input == "exit" {
 			log.Println("Exiting DOC REPL")
 			break
-		} else if input == "test" {
-			GetDoc_txt("test")
-		} else if input == "the_array" {
-			GetDoc_belle("the_array")
 		} else if input == "functions" {
 			GetDoc_belle("functions")
 		} else if input == "procedures" {
@@ -48,11 +52,10 @@ func Load() {
 			GetDoc_belle("variables")
 		} else if input == "condition_handling" {
 			GetDoc_belle("condition_handling")
-		} else if input == "simple_declare" {
-			GetDoc_belle("simple_declare")
+		} else if input == "declare" {
+			GetDoc_belle("declare")
 		} else {
 			fmt.Println("Invalid Argument Entered!")
 		}
-	}
-	
+	}	
 }

@@ -6,11 +6,10 @@ import (
 	"os"
 	"github.com/KisuraWSP/belle/src/repl"
 	"github.com/KisuraWSP/belle/src/repl/document"
-	"github.com/KisuraWSP/belle/src/ast"
 )
 
 // version 
-var VERSION_NO string = fmt.Sprintf("%v",0.13)
+var VERSION_NO string = fmt.Sprintf("%v",0.14)
 var VERSION string = "Belle Version " + VERSION_NO
 
 // help <- guides the users to use the program
@@ -25,8 +24,7 @@ Usage:
         	version		displays the version of the language 
         	doc		displays the REPL for the language documentation
 		repl 		loads the READ-EVAL-PRINT-LOOP
-		fread 		reads the .belle file if given as an argument
-		values 		displays the values for the enums in the language
+		fread 		reads the .belle file if and checks if it follows the compiler ruleset
 			
 `
 
@@ -42,10 +40,6 @@ func main() {
 				document.Load()
 			case "repl":
 				repl.Load()
-			case "values":
-				ast.Print_reserved_values()
-				ast.Print_primitive_values()
-				ast.Print_symbol_values()
 			case "fread":
 				fmt.Println("TO BE IMPLEMENTED")
 			case "help":
