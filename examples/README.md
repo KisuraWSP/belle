@@ -1,3 +1,0 @@
-- The following examples show how i want the final syntax to behave like
-- For now its a work in progress
-- Will update over time

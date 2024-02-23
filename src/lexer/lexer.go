@@ -9,32 +9,26 @@ import(
 */
 const (
 	// reserved keywords
-	start int = iota 
-	end
-	declare
-	implement
-	bProc
-	bFunc
-	bReturn
-	bVar
-	if_ // if
-	then 
-	else_ // else
-	for_ // for
-	call
+	Declare int = iota 
+	Implement
+	Proc
+	Return
+	Var
+	If
+	Then 
+	Else 
+	For 
+	Call
 	
-	// functions (built-in)
-	bPrint
-	bScan
 			
 	// types
-	bInt // signed integer (64 bit)
-	bDecPt // signed float
-	bString // string
-	bBool // Boolean
-	bChr // char
-	bAny // Any type
-	bError // Error type
+	Int // signed integer (64 bit)
+	Flt // signed float
+	String // string
+	Bool // Boolean
+	Chr // char
+	Any // Any type
+	Error // Error type
 	
 
 	// Operators
@@ -63,127 +57,9 @@ const (
 	DOT // .
 )
 
-// print enums
-var reserved = []int{
-	start,
-	end,
-	declare,
-	implement,
-	bProc,
-	bFunc,
-	bReturn,
-	bVar,
-	if_, 
-	then, 
-	else_, 
-	for_,
-	call,
-}
-
-var primitives = []int{
-	bInt, 
-	bDecPt, 
-	bString,
-	bBool,
-	bChr, 
-	bAny, 
-	bError,
-}
-
-var symbols = []int{
-	SLASH_R, 
-	SINGLEQUOTE, 
-	DOUBLEQUOTE, 
-}
-
-var operators = []int{
-	PLUS, 
-	MINUS, 
-	STAR, 
-	SLASH_L, 
-	EQUAL, 
-	NOT, 
-	OR,
-	AND, 
-	TRIANGLE_BRACKET_L, 
-	TRIANGLE_BRACKET_R,
-};
-
-var seperators = []int{
-	BRACKET_L, 
-	BRACKET_R, 
-	SEMICOLON, 
-	COLON, 
-	COMMA, 
-	DOT, 
-};
-
-var builtin_func = []int{
-	bPrint,
-	bScan,
-}; 
-
-func Print_reserved_values(){
-	var length int = len(reserved)
-	fmt.Println("VALUES {RESERVED}")
-	for i:=0; i<length; i++ {
-		fmt.Println(reserved[i])
-	}
-}
-
-func Print_symbol_values(){
-	var length int = len(symbols)
-	fmt.Println("VALUES {SYMBOLS}")
-	for i:=0; i<length; i++ {
-		fmt.Println(symbols[i])
-	}
-}
-
-func Print_primitive_values(){
-	var length int = len(primitives)
-	fmt.Println("VALUES {PRIMITIVES}")
-	for i:=0; i<length; i++ {
-		fmt.Println(primitives[i])
-	}
-}
-
-func Print_operator_values(){
-	var length int = len(operators)
-	fmt.Println("VALUES {OPERATORS}")
-	for i:=0; i<length; i++ {
-		fmt.Println(operators[i])
-	}
-}
-
-func Print_builtin_func_values(){
-	var length int = len(builtin_func)
-	fmt.Println("VALUES {BUILTIN_FUNC}")
-	for i:=0; i<length; i++ {
-		fmt.Println(builtin_func[i])
-	}
-}
-
-func Print_seperator_values(){
-	var length int = len(seperators)
-	fmt.Println("VALUES {SEPERATORS}")
-	for i:=0; i<length; i++ {
-		fmt.Println(seperators[i])
-	}
-}
-
-
-func Load(){
-	Print_seperator_values()
-	Print_builtin_func_values()
-	Print_operator_values()
-	Print_primitive_values()
-	Print_symbol_values()
-	Print_reserved_values()
-}
-
 // lexical analysis (generate tokens for each keyword or expression evaluated)
 type token struct{
-	type_ string // checks the type of the token 
+	Type int // checks the type of the token 
 		     /*
 		     	Possible types include:
 		     		identifier - defined by the programmer
@@ -194,29 +70,117 @@ type token struct{
 		     		comment - discarded by the program
 		     		whitespace - discarded by the program
 		     */
-	value string // represents what the value that the token is evaluating 
+	Value string // represents what the value that the token is evaluating 
 }
 
-func (t *token) Check_if_keyword(){
-	// if the keyword is reserved then do some operation with it
-	// if not its a value by default to that operations type 
+func Create_token(value string, type int) (string, int){
+	return value, type
 }
 
-/*
-	 TODO
-	 check_if_identifier
-	 check_if_seperator
-	 check_if_literal
-	 check_if_comment
-	 check_if_whitespace
-	 check_if_operator
-*/
+func isAlpha(str: string){
+    //return str.toUpperCase() != str.toLowerCase();
+}
 
-func Generate_expression(tokenlist []*token){
+func isInt(str: string){
+	//const c = str.charCodeAt(0);
+    //const bounds = ['0'.charCodeAt(0), '9'.charCodeAt(0)];
+    return (c >= bounds[0] && c<= bounds[1]);
+}
+
+func isSkippable(str: string) string {
+    return str == " " || str == "\n" || str == "\t"
+}
+
+func isSpecial(str: string) string{
+    return str == "->"
+}
+
+func Generate_expression(source_code string){
 	//generate a valid expression and make sure it works with the programming languages logic
 	/*
 	we would want to express it like this as below
 	      	eg:- x = 1;
 	      	 [(identifier,x),(operator,=),(literal,1)]
 	*/ 	
+	/*
+	
+	const tokens = new Array<Token>();
+    const src = source_code.split("");
+
+    // build each token till end of file
+    while(src.length > 0){
+        // single character tokens
+        if(src[0] == '('){
+            tokens.push(create_token(src.shift(), TokenType.OpenParen));
+        }else if (src[0] == ')'){
+            tokens.push(create_token(src.shift(), TokenType.CloseParen));
+        }else if (src[0] == '{'){
+            tokens.push(create_token(src.shift(), TokenType.OpenCurly));
+        }else if (src[0] == '}'){
+            tokens.push(create_token(src.shift(), TokenType.CloseCurly));
+        }else if (src[0] == '+' || src[0] == '-' ||  src[0] == '*' || src[0] == '/'){
+            tokens.push(create_token(src.shift(), TokenType.BinaryOp));
+        }else if (src[0] == ';'){
+            tokens.push(create_token(src.shift(), TokenType.SemiColon));
+        }else if (src[0] == ':'){
+            tokens.push(create_token(src.shift(), TokenType.Colon));
+        }else if (src[0] == '='){
+            tokens.push(create_token(src.shift(), TokenType.Equals));
+        }else if (src[0] == '|'){
+            tokens.push(create_token(src.shift(), TokenType.Or));
+        }else if (src[0] == '>'){
+            tokens.push(create_token(src.shift(), TokenType.GreaterThan));
+        }else if (src[0] == '<'){
+            tokens.push(create_token(src.shift(), TokenType.LessThan));
+        }else if (src[0] == '&'){
+            tokens.push(create_token(src.shift(), TokenType.And));
+        }else if (src[0] == '!'){
+            tokens.push(create_token(src.shift(), TokenType.Not));
+        }else if (src[0] == '#'){
+            tokens.push(create_token(src.shift(), TokenType.Hash));
+        }else if (src[0] == '@'){
+            tokens.push(create_token(src.shift(), TokenType.At));
+        }else if (src[0] == '.'){
+            tokens.push(create_token(src.shift(), TokenType.Dot));
+        }else{
+            // multi-character tokens
+            if(isInt(src[0])){
+                let num = "";
+                while(src.length > 0 && isInt(src[0])){
+                    num += src.shift();
+                }
+                tokens.push(create_token(num, TokenType.Number))
+            }else if(isAlpha(src[0])){
+                let id = "";
+                while(src.length > 0 && isAlpha(src[0])){
+                    id += src.shift();
+                }
+                // check for reserved keywords
+                const reserved = reserved_keywords[id];
+                const spec_op = special_operators[id];
+                const types = primitives[id];
+                if(reserved){
+                    tokens.push(create_token(id, reserved));
+                }else if(spec_op){
+                    tokens.push(create_token(id, spec_op));   
+                }else if(id in primitives){
+                    tokens.push(create_token(id, types));       
+                }else{
+                    tokens.push(create_token(id, TokenType.Identifier));
+                }
+            }else if(isSkippable(src[0])){
+                src.shift();
+            }else {
+                console.error(
+                    "Unrecognized Character found in Source",
+                    src[0].charCodeAt(0),
+                    src[0]
+                );
+                Deno.exit(1);
+            }
+        }
+    }
+    return tokens;
+	
+	*/
 }
