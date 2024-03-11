@@ -1,37 +1,35 @@
 package ast
 
-import(
-	"fmt"
-)
+//"fmt"
 
 // ast (abstract syntax tree)
-type node struct{
+type Node struct {
 	operation_type string
-	content string
+	content        string
 }
 
-type tree struct{
-	root *node 
-	left *node  
-	right *node 
+type Tree struct {
+	root  *Node
+	left  *Node
+	right *Node
 }
 
-func (t *tree) Walk_left(){
+func (t *Tree) Walk_left() {
 	// traverse the left side of the tree
 }
 
-func (t *tree) Walk_right(){
+func (t *Tree) Walk_right() {
 	// traverse the right side of the tree
 }
 
-func (t *tree) Check_root(){
+func (t *Tree) Check_root() {
 	// check if the node is the root
 }
 
-func (t *tree) Append_node(n *node){
+func (t *Tree) Append_node(n *Node) {
 	// append node to the tree
 }
 
-func (t *tree) Check_node_type(n *node){
+func (t *Tree) Check_node_type(n *Node) {
 	// check the type of the node with the tree node
 }
