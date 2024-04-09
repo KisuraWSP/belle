@@ -1,6 +1,0 @@
-declare	Var value0 : Int->0;
-declare Var value1 : Flt->12.3;
-declare	Var value2 : Bool->True;
-declare	Var value3 : Str->"john cena";
-declare	Var value4 : Chr->'X';
-declare	Var value5 : Int->69420;
