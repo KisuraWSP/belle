@@ -10,3 +10,9 @@
 ## 1/15/2024 
 - Redoing the compiler structure to make it easier to do the implementation
 - Implemented the Enum test for the lexer 
+
+# v0.1.5
+## 4/17/2024 - ongoing
+- Will be working on this but for now the compiler is marked as v0.1.5 until its working features are implemented once this is completed 
+  we can mark the version as **v0.1.6** 
+- Compiler will be marked as Version 1.0 until entire standard library is implemented tested and all features of it are robust

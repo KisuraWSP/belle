@@ -1,0 +1,93 @@
+let mut main : Function = {
+	// Typed variables
+	let x : Int = -10;
+	let mut x2 : UInt = 420;
+	x2 = 69;
+
+	// Type-inferred variables
+	let x3 := true;
+	let mut x4 := "John Cena";
+	x4 = "The Wok";
+
+	// functions
+	let Func : Function = {
+		// inside this block is call function declarations
+		// each declaration is referenced by an id
+		() -> {
+			#print("Yooooo!");
+		}
+
+		// params
+		(msg : String) -> {
+			#print("%", msg);
+		}
+		
+		// return values
+		() : Int -> {
+			return -69420;
+		}
+
+		// multiple return values
+		() : (Int, String) -> {
+			return 69420, "nice";
+		}
+
+		// named return values
+		() : (x : Int) ->{
+			return;
+		}
+
+	}
+	
+	Func[1]();
+	Func[2]("Test");
+	Func[3]();
+	Func[4]();
+	Func[5]();
+
+
+	// mutable functions
+	let mut Func2 : Function = {
+		() -> {
+			#print("Yooooo!");
+		}
+
+		// params
+		(msg : String) -> {
+			#print("%", msg);
+		}
+		
+		// return values
+		() : Int -> {
+			return -69420;
+		}
+
+		// multiple return values
+		() : (Int, String) -> {
+			return 69420, "nice";
+		}
+
+		// named return values
+		() : (x : Int) ->{
+			return;
+		}
+
+		()
+	}
+
+	// record type
+	let person : Record = {
+		name : String = "John Cena";
+		age  : UInt = 42;	
+	}
+
+	let mut person2 : Record = {
+		name : String = "John Cena";
+		age  : UInt = 42;		
+	}
+	person2.name = "The Wok";
+	person2.age = 69;
+	
+	// Compile-time Print
+	#print("hallo");
+}

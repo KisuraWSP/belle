@@ -7,7 +7,7 @@ import (
 )
 
 // version
-var VERSION_NO string = fmt.Sprintf("%v", 0.14)
+var VERSION_NO string = "0.1.5 alpha build 0"
 var VERSION string = "Belle Version " + VERSION_NO
 
 // help <- guides the users to use the program

@@ -1,5 +1,0 @@
-- Every `.belle` can only have a max size of 1 MB
-- File importing cannot exist in a `.belle` file
-- Every function, variable, procedure must be decalared
-- The REPL uses reverse polish notation for expressions written in it
-- Calling variables will automatically print it to the console (PrintStream)
