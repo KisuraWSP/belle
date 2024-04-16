@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-
-	"github.com/KisuraWSP/belle/src/repl"
 )
 
 // version
@@ -23,26 +21,24 @@ Usage:
      	  	run		compile and run the program via the executable 
         	version		displays the version of the language 
 		repl 		loads the READ-EVAL-PRINT-LOOP
-		fread 		reads the .belle file if and checks if it follows the compiler ruleset
 			
 `
 
 func main() {
 	args := os.Args
+	if len(args) == 1 {
+		fmt.Printf("%s\n", HELP)
+	}
 	for i := 1; i < len(args); i++ {
 		switch args[i] {
 		case "run":
 			fmt.Println("TO BE IMPLEMENTED")
 		case "version":
 			fmt.Printf("%s\n", VERSION)
-		case "repl":
-			repl.Load()
-		case "fread":
-			fmt.Println("TO BE IMPLEMENTED")
 		case "help":
 			fmt.Printf("%s\n", HELP)
 		default:
-			log.Println("Not an valid  argument")
+			log.Fatalf("Not an valid  argument")
 		}
 	}
 }
