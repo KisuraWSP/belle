@@ -1,9 +1,6 @@
 # Belle
-- An esoteric programming language
-
----
 - Build System : GNU Make
----
+  
 ## Important
 - Read the CHANGELOG.txt file for how the progress of the Language is occurring
   
@@ -23,8 +20,6 @@ go build
 
 ### How to run Program
 ```
-# (You will actually see no output from the program)
-# (Thats how we intended it to be anyways)
 # Using via GNU make
 make run
 
@@ -58,17 +53,6 @@ go run . version
 # Using the executable 
 ./belle version
 ```
-
-### Display the Executable Name (Not Necessary but is given incase you want to know the name of the executable name)
-```
-# (GNU make only)
-# For Users who want to know the programs executable file name 
-# This can be used by windows users, to set it as an environment variable
-make exec_name
-```
 ## Links
 [CONTRIBUTING](https://github.com/KisuraWSP/belle/blob/main/CONTRIBUTING.md)<br>
-[SYNTAX](https://github.com/KisuraWSP/belle/blob/main/docs/SYNTAX.md)<br>
-[FEATURES](https://github.com/KisuraWSP/belle/blob/main/docs/FEATURES.md)<br>
-[REFERENCES](https://github.com/KisuraWSP/belle/blob/main/docs/REFERENCES.md)<br>
 ---
