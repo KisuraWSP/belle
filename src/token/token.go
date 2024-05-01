@@ -28,17 +28,17 @@ const (
 	ReturnToken = "return"
 
 	// types
-	Int      = "Int"      // signed integer (64 bit)
-	Flt      = "Flt"      // Float (64 bit)
-	String   = "String"   // string
-	Bool     = "Bool"     // Boolean
-	Chr      = "Chr"      // char
-	UInt     = "UInt"     // Unsigned integer (64 bit) type
-	Any      = "Any"      // Any type
-	Function = "Function" // Function type
-	Record   = "Record"   // Record type
-	Byte     = "Byte"     // Byte type
-	Array    = "Array"    // Array type
+	Int       = "Int"       // signed integer (64 bit)
+	Flt       = "Flt"       // Float (64 bit)
+	String    = "String"    // string
+	Bool      = "Bool"      // Boolean
+	Chr       = "Chr"       // char
+	UInt      = "UInt"      // Unsigned integer (64 bit) type
+	Any       = "Any"       // Any type
+	Procedure = "Procedure" // Procedure type
+	Record    = "Record"    // Record type
+	Byte      = "Byte"      // Byte type
+	Array     = "Array"     // Array type
 
 	// Operators
 	PLUS               = "+"
@@ -78,26 +78,26 @@ const (
 )
 
 var keywords = map[string]TokenType{
-	"let":      LetToken,
-	"mut":      MutToken,
-	"import":   ImportToken,
-	"load":     LoadToken,
-	"match":    MatchToken,
-	"case":     CaseToken,
-	"else":     ElseToken,
-	"orelse":   OrElseToken,
-	"return":   ReturnToken,
-	"Int":      Int,      // signed integer (64 bit)
-	"Flt":      Flt,      // Float (64 bit)
-	"String":   String,   // string
-	"Bool":     Bool,     // Boolean
-	"Chr":      Chr,      // char
-	"UInt":     UInt,     // Unsigned integer (64 bit) type
-	"Any":      Any,      // Any type
-	"Function": Function, // Function type
-	"Record":   Record,   // Record type
-	"Byte":     Byte,     // Byte type
-	"Array":    Array,    // Array type
+	"let":       LetToken,
+	"mut":       MutToken,
+	"import":    ImportToken,
+	"load":      LoadToken,
+	"match":     MatchToken,
+	"case":      CaseToken,
+	"else":      ElseToken,
+	"orelse":    OrElseToken,
+	"return":    ReturnToken,
+	"Int":       Int,       // signed integer (64 bit)
+	"Flt":       Flt,       // Float (64 bit)
+	"String":    String,    // string
+	"Bool":      Bool,      // Boolean
+	"Chr":       Chr,       // char
+	"UInt":      UInt,      // Unsigned integer (64 bit) type
+	"Any":       Any,       // Any type
+	"Procedure": Procedure, // Procedure type
+	"Record":    Record,    // Record type
+	"Byte":      Byte,      // Byte type
+	"Array":     Array,     // Array type
 }
 
 func LookupIdent(ident string) TokenType {
