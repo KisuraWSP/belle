@@ -20,7 +20,6 @@ Usage:
 	The commands are:
      	  	run		compile and run the program via the executable 
         	version		displays the version of the language 
-		repl 		loads the READ-EVAL-PRINT-LOOP
 			
 `
 

@@ -1,3 +1,15 @@
+# Goals
+- [ ] A Simple Language i can just use for fun
+- [ ] Type Safe
+- [ ] Esoteric 
+- [ ] Have a standard library
+
+```
+TODO
+- add features over time and make the documentation of the language and repo easier to use
+- make sure the langauge is safe and works properly and gives actual output
+```
+
 # Belle
 - Build System : GNU Make
   
