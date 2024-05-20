@@ -122,3 +122,9 @@ func (l *Lexer) readNumber() string {
 func isDigit(ch byte) bool {
 	return '0' <= ch && '9' <= ch
 }
+
+// todo : add type checking to lexer
+// for type checking
+func isType(ch byte) string {
+	return ""
+}
