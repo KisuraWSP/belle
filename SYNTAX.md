@@ -1,86 +1,33 @@
 # Types
-```rust
-positive_number             $ unsigned integers (32 bit)
-negative_number             $ signed integers (32 bit)
-value                       $ string
-letter                      $ char
-numbers_precise             $ float
-condtion                    $ boolean
+```go
+// read this https://www.tutorialspoint.com/clojure/clojure_data_types.htm
+// What data structure that LISP uses https://en.wikipedia.org/wiki/S-expression
+int // i32
+string
+uint // u32
+float32 
+bool
+byte // basically char but its actually u8
 ```
 
-# Comments
-```rust
-$ single line comment
-```
-
-# Entry point of program
-```rust
-prog hallo(){
-    $ code goes here
-}
-```
-
-# Function
-```rust
-prog is_func(){
-    $ some random code
-}
-
-prog is_func2() & letter{
-    output 't';
-}
+# Entry Point
+```go
+(func main []
+    (code block))
 ```
 
 # Variables
-```rust
-t : value = "2332";
+```go
+(var name "hallo")
 ```
 
 # Constants
-```rust
-t : is_fixed value = "te";
+```go
+(const PI 3.14)
 ```
 
-# Structs
-```rust
-custom_type Person{
-    name : value;
-    age := 2;
-}
+# Functions
+```go
+(func print_name [name]
+(print name))
 ```
-
-# Enums
-```rust
-number_type fruits{
-    Orange;
-    Banana = 2; $ overriding the value
-    Grape; $ now value is 3
-}
-```
-
-# Condition Handling
-```rust
-$ switch case
-check(num){
-    is 1:
-        out("1");
-    is 2:
-        out("2");
-    not: 
-        out("not the above cases");
-}
-```
-
-# Type Alias
-```rust
-make buffer : (value, positive_number);
-age : buffer = ("test", 34);
-```
-
-# Import statements
-```rust
-$ used when calling libraries or files
-call_this "nerd"; $ math library
-call_this "basic"; $ contains basic functions such as out() and in();
-
-call_this&read_file "test.belle";

@@ -1,9 +1,10 @@
 # Goals
 - [ ] A Simple Language i can just use for fun
 - [ ] Type Safe
-- [ ] Esoteric 
-- [ ] Have a standard library
+- [ ] Lisp Dialect
 
+# WE can improve it over time by adding new features but other than that once the goals finished its done for now
+# Eventually we can make it a compiler
 ```
 TODO
 - add features over time and make the documentation of the language and repo easier to use
