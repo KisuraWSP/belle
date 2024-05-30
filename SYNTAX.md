@@ -9,6 +9,12 @@ float32
 bool
 byte // basically char but its actually u8
 ```
+```
+we compile to golang code and then generate an executable via the golang 
+once we make golang compilation possible then we can start implementing a small standard library with some basic functions
+include raylib in the standard library
+ship the langauge
+```
 
 # Entry Point
 ```go
