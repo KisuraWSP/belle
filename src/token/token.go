@@ -11,34 +11,23 @@ const (
 	// Token Types
 	IDENT      = "INDENTIFIER"
 	EOF        = "EOF"
-	ILLEGAL    = "ILLEGAL"
+	UNKNOWN    = "UNKNOWN"
 	LITERAL    = "LITERAL"
 	COMMENT    = "COMMENT"
 	WHITESPACE = "WHITESPACE"
 
 	// reserved keywords
-	LetToken    = "let"
-	MutToken    = "mut"
-	ImportToken = "import"
-	LoadToken   = "load"
-	MatchToken  = "match"
-	CaseToken   = "case"
-	ElseToken   = "else"
-	OrElseToken = "orelse"
-	ReturnToken = "return"
-
-	// types
-	Int       = "Int"       // signed integer (64 bit)
-	Flt       = "Flt"       // Float (64 bit)
-	String    = "String"    // string
-	Bool      = "Bool"      // Boolean
-	Chr       = "Chr"       // char
-	UInt      = "UInt"      // Unsigned integer (64 bit) type
-	Any       = "Any"       // Any type
-	Procedure = "Procedure" // Procedure type
-	Record    = "Record"    // Record type
-	Byte      = "Byte"      // Byte type
-	Array     = "Array"     // Array type
+	LetToken       = "let"
+	ImportToken    = "import"
+	LoadToken      = "load"
+	MatchToken     = "match"
+	CaseToken      = "case"
+	ElseToken      = "else"
+	OrElseToken    = "orelse"
+	ReturnToken    = "return"
+	PrintToken     = "print"
+	ProcedureToken = "proc"
+	EndToken       = "end"
 
 	// Operators
 	PLUS               = "+"
@@ -46,15 +35,14 @@ const (
 	STAR               = "*"
 	LSLASH             = "/"
 	ASSIGN             = "="
-	EQUAL              = "equal"
-	NOT                = "not"
-	OR                 = "or"
-	AND                = "and"
-	GREATER_THAN       = "greaterthan"
-	LESS_THAN          = "lessthan"
-	GREATER_THAN_EQUAL = "greaterthan_orequal"
-	LESS_THAN_EQUAL    = "lessthan_orequal"
-	WALRUS             = ":="
+	EQUAL              = "=="
+	NOT                = "!"
+	OR                 = "||"
+	AND                = "&&"
+	GREATER_THAN       = ">"
+	LESS_THAN          = "<"
+	GREATER_THAN_EQUAL = ">="
+	LESS_THAN_EQUAL    = "<="
 
 	// Symbols
 	RSLASH      = `\`
@@ -73,31 +61,20 @@ const (
 	COLON     = ":"
 	COMMA     = ","
 	DOT       = "."
-	LSQUIRLY  = "{"
-	RSQUIRLY  = "}"
 )
 
 var keywords = map[string]TokenType{
-	"let":       LetToken,
-	"mut":       MutToken,
-	"import":    ImportToken,
-	"load":      LoadToken,
-	"match":     MatchToken,
-	"case":      CaseToken,
-	"else":      ElseToken,
-	"orelse":    OrElseToken,
-	"return":    ReturnToken,
-	"Int":       Int,       // signed integer (64 bit)
-	"Flt":       Flt,       // Float (64 bit)
-	"String":    String,    // string
-	"Bool":      Bool,      // Boolean
-	"Chr":       Chr,       // char
-	"UInt":      UInt,      // Unsigned integer (64 bit) type
-	"Any":       Any,       // Any type
-	"Procedure": Procedure, // Procedure type
-	"Record":    Record,    // Record type
-	"Byte":      Byte,      // Byte type
-	"Array":     Array,     // Array type
+	"let":    LetToken,
+	"proc":   ProcedureToken,
+	"import": ImportToken,
+	"load":   LoadToken,
+	"match":  MatchToken,
+	"case":   CaseToken,
+	"else":   ElseToken,
+	"orelse": OrElseToken,
+	"return": ReturnToken,
+	"end":    EndToken,
+	"print":  PrintToken,
 }
 
 func LookupIdent(ident string) TokenType {
